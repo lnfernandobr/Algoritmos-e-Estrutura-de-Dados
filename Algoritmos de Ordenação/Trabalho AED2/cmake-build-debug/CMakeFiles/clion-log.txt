@@ -1,0 +1,21 @@
+/home/fernando/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/191.7479.33/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/home/fernando/Documentos/DevFaculdade/Trabalho AED2"
+CMake Error: Could not find cmake module file: CMakeDetermineAED2Compiler.cmake
+CMake Error: Error required internal CMake variable not set, cmake may not be built correctly.
+Missing variable is:
+CMAKE_AED2_COMPILER_ENV_VAR
+CMake Error: Error required internal CMake variable not set, cmake may not be built correctly.
+Missing variable is:
+CMAKE_AED2_COMPILER
+CMake Error: Could not find cmake module file: /home/fernando/Documentos/DevFaculdade/Trabalho AED2/cmake-build-debug/CMakeFiles/3.14.3/CMakeAED2Compiler.cmake
+CMake Error at CMakeLists.txt:2 (project):
+  No CMAKE_AED2_COMPILER could be found.
+
+  Tell CMake where to find the compiler by setting the CMake cache entry
+  CMAKE_AED2_COMPILER to the full path to the compiler, or to the compiler
+  name if it is in the PATH.
+
+
+CMake Error: Could not find cmake module file: CMakeAED2Information.cmake
+CMake Error: CMAKE_AED2_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+See also "/home/fernando/Documentos/DevFaculdade/Trabalho AED2/cmake-build-debug/CMakeFiles/CMakeOutput.log".
