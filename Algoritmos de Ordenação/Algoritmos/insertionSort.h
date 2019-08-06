@@ -1,11 +1,11 @@
 #include <stdint.h>
 
 void insertionSort(int32_t *array, int32_t n) {
-    int32_t key, value, j;
+    int32_t value, j;
     
-    for(int32_t i = 2; i < n; i++) {
-        key = array[i], 
-        value = array[i], 
+    for(int32_t i = 1; i < n; ++i) {
+
+        value = array[i],
         j = i - 1;
 
         while(j >= 0 && value < array[j]) {
@@ -13,7 +13,7 @@ void insertionSort(int32_t *array, int32_t n) {
             j--;
         }
     
-    array[j + 1] = key;
+        array[j + 1] = value;
     }
 
 }

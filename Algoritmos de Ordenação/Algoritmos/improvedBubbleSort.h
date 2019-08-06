@@ -1,6 +1,7 @@
+#include <stdint.h>
 
-void Swap(long *array, int i, int inc) {
-    long aux;
+void Swap(int32_t *array, int32_t i, int32_t inc) {
+    int32_t aux;
     aux = array[i];
     array[i] = array[i + inc];
     array[i + inc] = aux;
@@ -8,8 +9,8 @@ void Swap(long *array, int i, int inc) {
 
 
 
-void enhance_bubbleSort(long *array, long n) {
-    int boolean = 1,
+void enhance_bubbleSort(int32_t *array, int32_t n) {
+    int32_t boolean = 1,
         nFlag = n,
         guard = n, 
         j;
