@@ -2,8 +2,7 @@
 #include "Algoritmos/bubbleSort.h"
 #include "Algoritmos/insertionSort.h"
 #include "Algoritmos/heapSort.h"
-
-#include "mergesort.h"
+#include "Algoritmos/mergesort.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -287,50 +286,58 @@ int main(void) {
     double time_spent;
     int32_t numbers[9] = {10, 100, 1000, 10000, 100000, 500000, 1000000, 10000000, 100000000};
     int32_t length;
-    int32_t *array;
-
-
-
-    length = sizeFile(100000000, 'd');
-    array = loadArray(length, 100000000, 'd'); // load array
-    int32_t *Tmp = (int32_t*) malloc(2 * length * sizeof(int32_t));
-
-    gettimeofday(&tv1, NULL);
-        merge_sort(array,Tmp,  0, length-1);
-    gettimeofday(&tv2, NULL);
-
-    time_spent = (double) ((double)(tv2.tv_usec - tv1.tv_usec) / 1000000 + (double) (tv2.tv_sec - tv1.tv_sec)) * 1000;
-
-    saveFile(100000000, 'D', array, length * sizeof(int32_t)); // Salva array
-    printf("Será salvo o valor de %d com tipo %c e tempo de execução: %lf\n", 100000000, 'D', time_spent);
-    saveTime(100000000,'D', 5, time_spent);
-    free(array);
-    printf("\n\n\n");
-
-
-
-
-
-//     for (int i = 0; i < 6; ++i) {
-//         printf("BubleSort: \n");
-//        for (int j = 0; j < 3; ++j) {
+    int32_t *array, *Tmp;
 //
-//            length = sizeFile(numbers[i], TYPES[j]);
-//            array = loadArray(length, numbers[i], TYPES[j]); // load array
+//    length = sizeFile(1000, 'd');
+//    array = loadArray(length, 1000, 'd'); // load array
+//    Tmp = (int32_t*) malloc(length * sizeof(int32_t));
 //
-//            gettimeofday(&tv1, NULL);
-//                bubbleSort(array, numbers[i]);
-//            gettimeofday(&tv2, NULL);
+//    for (int i = 0; i < length ; ++i) {
+//        printf("%d ", array[i]);
+//    } printf("\n");
 //
-//            time_spent = (double) ((double)(tv2.tv_usec - tv1.tv_usec) / 1000000 + (double) (tv2.tv_sec - tv1.tv_sec)) * 1000;
+//    gettimeofday(&tv1, NULL);
+//        merge_sort(array, Tmp, 0, length - 1);
+//    gettimeofday(&tv2, NULL);
 //
-//            saveFile(numbers[i], TYPES_SAVE[j], array, length * sizeof(int32_t)); // Salva array
-//            printf("Será salvo o valor de %d com tipo %c e tempo de execução: %lf\n", numbers[i], TYPES_SAVE[j], time_spent);
-//            saveTime(numbers[i], TYPES_SAVE[j], 2, time_spent);
-//            free(array);
-//            printf("\n\n\n");
-//        }
-//     }
+//    printf("Ordenado: ");
+//    for (int i = 0; i < length ; ++i) {
+//        printf("%d ", array[i]);
+//    } printf("\n");
+//
+//    time_spent = (double) ((double)(tv2.tv_usec - tv1.tv_usec) / 1000000 + (double) (tv2.tv_sec - tv1.tv_sec)) * 1000;
+//
+//    saveFile(1000, 'D', array, length * sizeof(int32_t)); // Salva array
+//    printf("Será salvo o valor de %d com tipo %c e tempo de execução: %lf\n",1000, 'D', time_spent);
+//    saveTime(1000, 'D', 5, time_spent);
+//
+//    free(array);
+//    free(Tmp);
+//
+//    printf("\n\n\n");
+
+
+     for (int i = 0; i < 9; ++i) {
+         printf("BubleSort: \n");
+        for (int j = 0; j < 3; ++j) {
+
+            length = sizeFile(numbers[i], TYPES[j]);
+            array = loadArray(length, numbers[i], TYPES[j]); // load array
+            Tmp = (int32_t*) malloc(length * sizeof(int32_t));
+
+            gettimeofday(&tv1, NULL);
+                merge_sort(array, Tmp, 0, length - 1);
+            gettimeofday(&tv2, NULL);
+
+            time_spent = (double) ((double)(tv2.tv_usec - tv1.tv_usec) / 1000000 + (double) (tv2.tv_sec - tv1.tv_sec)) * 1000;
+
+            saveFile(numbers[i], TYPES_SAVE[j], array, length * sizeof(int32_t)); // Salva array
+            printf("Será salvo o valor de %d com tipo %c e tempo de execução: %lf\n", numbers[i], TYPES_SAVE[j], time_spent);
+            saveTime(numbers[i], TYPES_SAVE[j], 5, time_spent);
+            free(array);
+            printf("\n\n\n");
+        }
+     }
 
     return 0;
 
