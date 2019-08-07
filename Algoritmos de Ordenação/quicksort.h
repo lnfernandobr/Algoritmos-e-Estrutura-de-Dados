@@ -1,57 +1,67 @@
-#include <stdlib.h>
 #include <stdio.h>
-#include <stdint.h>
 
-unsigned int pivoFunction(int32_t start, int32_t end) {
-    return end;
+void quickSort(int32_t *L, int32_t ini, int32_t fim);
+void pivo(int32_t ini, int32_t fim, int32_t *mediana, unsigned int tipo);
+
+
+
+void pivo(int32_t ini, int32_t fim, int32_t *mediana, unsigned int tipo) {
+        if(tipo == 1) {
+            *mediana = fim;
+        }
+
+        *mediana = fim;
 }
 
-// gettimeofday(timeval, NULL);
+void quickSort(int32_t *L, int32_t ini, int32_t fim) {
 
-
-void quicksort(int32_t *array, int32_t start, int32_t end) {
-    int32_t aux, pivo, i, j, key;
-
-    if((end - start) < 2) {
-        if((end - start) == 1) {
-            if(array[start] > array[end]) {
-                aux = array[start];
-                array[start] = array[end];
-                array[end] = aux;
+    int32_t aux;
+//    int32_t mediana;
+    if((fim - ini) < 2) {
+        if((fim - ini) == 1) {
+            if(L[ini] > L[fim]) {
+                aux = L[ini];
+                L[ini] = L[fim];
+                L[fim] = aux;
             }
         }
     } else {
-        pivo = pivoFunction(start, end);
-        
-        aux = array[pivo];
-        array[pivo] = array[end];
-        array[end] = aux;
+//        pivo(ini, fim, &mediana, 1);
+//        aux = L[fim];
+//        L[fim] = L[fim];
+//        L[fim] = aux;
 
-        i = start;
-        j = end - 1;
+        int32_t i = ini;
+        int32_t j = fim - 1;
 
-        key = array[end];
+        int32_t key = L[fim];
 
-        while (j >= i) {
-            while (array[i] < key) i++;
-            
-            while (array[j] > key) i--;
-            
-            if(j >= 1) {
-                aux = array[i];
-                array[i] = array[j];
-                array[j] = aux;
-                
-                i++, j--;
+        while (j > i) {
+
+            while (L[i] < key) {
+                i++;
             }
-            
+
+            while (L[j] > key && j >= ini) {
+                j--;
+            }
+
+
+            if(j > i) {
+                aux = L[i];
+                L[i] = L[j];
+                L[j] = aux;
+                i++;
+                j--;
+            }
         }
 
-        aux = array[i];
-        array[i] = array[end];
-        array[end] = aux;
-        
-        quicksort(array, start, i - 1);
-        quicksort(array, i + 1, end);
+        aux = L[i];
+        L[i] = L[fim];
+        L[fim] = aux;
+
+        quickSort(L, ini, i - 1);
+        quickSort(L, i + 1, fim);
+
     }
 }
