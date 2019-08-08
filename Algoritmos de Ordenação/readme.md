@@ -531,7 +531,7 @@ Os dados foram obtidos no laboratório de computação 4, da UEMS, foram coletad
 
 **100.000 ELEMENTOS**
 
-![Comparação entre algoritmos de ordenação  q3](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação  q3.png) 
+![Comparação entre algoritmos de ordenação  q3](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/Compara%C3%A7%C3%A3o%20entre%20algoritmos%20de%20ordena%C3%A7%C3%A3o%20%20q3.png) 
 
 
 
