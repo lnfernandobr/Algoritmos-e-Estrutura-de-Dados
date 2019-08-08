@@ -1,7 +1,12 @@
 
-void goDown(int *heap, int i, int n) {
-    int j = (2 * i);
-    int aux;
+void arranjar(int32_t *L, int32_t n);
+void descer(int32_t *heap, int32_t i, int32_t n);
+void heapSort(int32_t *L, int32_t n);
+
+
+void descer(int32_t *heap, int32_t i, int32_t n) {
+    int32_t j = (2 * i);
+    int32_t aux;
 
     if(j < n) {
 
@@ -15,31 +20,33 @@ void goDown(int *heap, int i, int n) {
             aux = heap[i];
             heap[i] = heap[j];
             heap[j] = aux;
-            goDown(heap, j, n);
+            descer(heap, j, n);
         }
     }
 
 }
 
 
+void arranjar(int32_t *L, int32_t n) {
+    for (int32_t i = (n/2); i >= 0; i--) 
+        descer(L, i, n);
+}
 
-void heapSort(int *vet, int n) {
-    int i, tmp;
 
-    for (i = (n / 2); i >= 0; i--) {
-        goDown(vet, i, n - 1);
-    }
+void heapSort(int32_t *L, int32_t n) {
+    
+    int32_t m, aux;
 
-    int m = n - 1;
+    arranjar(L, n);
+    
+    m = n;
 
-    while (m >= 1) {
-
-        tmp = vet[0];
-        vet[0] = vet[m];
-        vet[m] = tmp;
-
-        goDown(vet, 0, m-1);
+    while (m > 0) {
+        aux = L[0];
+        L[0] = L[m];
+        L[m] = aux;
 
         m--;
+        descer(L, 0, m) ;
     }
 }
