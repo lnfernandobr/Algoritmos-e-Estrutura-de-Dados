@@ -1,4 +1,7 @@
-void insertionSort(int32_t *array, int32_t n) {
+#include <stdlib.h>
+#include <time.h>
+
+void sort(int32_t *array, int32_t n) {
     int32_t value, j;
     
     for(int32_t i = 1; i < n; ++i) {
@@ -21,7 +24,7 @@ void MedianaDe3(int32_t L[], int32_t ini,int32_t fim, int32_t *med) {
 	meio = (fim + ini) / 2;
 	int32_t v[3] = { L[ini], L[meio], L[fim] };
 
-	insertionSort(v, 3);
+	sort(v, 3);
 
 	if(v[1] == L[ini]) 
 		*med = ini;
@@ -33,8 +36,8 @@ void MedianaDe3(int32_t L[], int32_t ini,int32_t fim, int32_t *med) {
 	}
 }
 
-/*QuickSort*/
 void quickSort(int32_t L[], int32_t ini, int32_t fim, int32_t tipo) {
+	
 	int32_t key, i, j, pivo, aux;
 
 	if((fim - ini) < 2) {

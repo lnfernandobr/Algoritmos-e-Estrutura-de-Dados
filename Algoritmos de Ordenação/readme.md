@@ -1,3 +1,7 @@
+[TOC]
+
+
+
 # Algoritmos de ordenação - Analise 
 
 
@@ -34,6 +38,10 @@ O BubleSort  é um algoritmo de **ordenação estável**.
 
 
 
+
+
+
+
 ###### Complexidade:
 
 $$
@@ -57,14 +65,14 @@ Informações Técnicas da maquina onde o algoritmo foi radado:
 function setup() {
     const mySetup = {
         processor: {
-          product: "Intel(R) Core(TM) i5-4210U CPU"
-          size: "2116MHz"
-          capacity: "2700MHz"
+          product: "Intel(R) Core(TM) i3-7100 CPU @ 3.90GHZ"
+          size: "987MHz"
+          capacity: "3900MHz"
           width: 64 
         }
         memory: 8,
         HD: "Sata - 500GB",
-        SO: "Linux Mint 19 Cinnamon - 64Bits"
+        SO: "Ubuntu - 64Bits"
     }
 }
 ```
@@ -237,6 +245,14 @@ Você também pode encontra-lo implementado na parte de código.
 
 
 
+
+
+
+
+
+
+
+
 <u>Primeira Execução</u> - Os tempos da tabela se encontram em  Milissegundos:
 
 | Valores | Aleatório(Tempo)         | Decrescente(Tempo)      | Crescente (Tempo)          |
@@ -248,8 +264,6 @@ Você também pode encontra-lo implementado na parte de código.
 | 100.000 | 31.672  - ***Segundos*** | 28.697 - ***Segundos*** | 0.206 - ***Milisegundos*** |
 | 500.000 | 13.292 - ***Minutos***   | 11.957 - ***Minutos***  | 4.037 - ***Milisegundos*** |
 
-
-
 <u>Segunda Execução</u> - Os tempos da tabela se encontram em  Milissegundos:
 
 | Valores | Aleatório(Tempo)         | Decrescente(Tempo)      | Crescente (Tempo)          |
@@ -260,8 +274,6 @@ Você também pode encontra-lo implementado na parte de código.
 | 10.000  | 305,760                  | 291,615                 | 0,093                      |
 | 100.000 | 31,711  - ***Segundos*** | 28,665 - ***Segundos*** | 0,964 - ***Milisegundos*** |
 | 500.000 | 13.280 - ***Minutos***   | 11.955 - ***Minutos***  | 4.703 - ***Milisegundos*** |
-
-
 
 <u>Terceira Execução</u> - Os tempos da tabela se encontram em  Milissegundos:
 
@@ -320,6 +332,12 @@ $$
 
 
 
+
+
+
+
+
+
 <u>Primeira Execução</u> - Os tempos da tabela se encontram em  Milissegundos:
 
 | Valores | Aleatório(Tempo)        | Decrescente(Tempo)      | Crescente (Tempo)          |
@@ -331,8 +349,6 @@ $$
 | 100.000 | 5.613  - ***Segundos*** | 11.169 - ***Segundos*** | 1.515 - ***Milisegundos*** |
 | 500.000 | 2.326 - ***Minutos***   | 4.648 - ***Minutos***   | 7.498 - ***Milisegundos*** |
 
-
-
 <u>Segunda Execução</u> - Os tempos da tabela se encontram em  Milissegundos:
 
 | Valores | Aleatório(Tempo)        | Decrescente(Tempo)      | Crescente (Tempo)          |
@@ -343,8 +359,6 @@ $$
 | 10.000  | 86,267                  | 116,950                 | 0,036                      |
 | 100.000 | 5,626  - ***Segundos*** | 11,161 - ***Segundos*** | 0.505 - ***Milisegundos*** |
 | 500.000 | 2.328 - ***Minutos***   | 4.671 - ***Minutos***   | 7.771 - ***Milisegundos*** |
-
-
 
 <u>Terceira Execução</u> - Os tempos da tabela se encontram em  Milissegundos:
 
@@ -360,19 +374,6 @@ $$
 
 
 Você também pode vizualizar um gráfico de comparação entre todos os algoritmos de ordenação analisados aqui, na seção - Gráficos. 
-
-
-
-
-
-Aproximações de tempo para entradas de `1.000.000`, `10.000.000` e `100.000.000`
-
-| 1.000.0000  | Horas | Dias |
-| :---------- | ----- | ---- |
-| 10.000.000  |       |      |
-| 100.000.000 |       |      |
-
-
 
 
 
@@ -407,33 +408,23 @@ $$
 
 
 
-Tabela de valores do tempo de execução:
+Tabela de valores da **média mergeSort** - milisegundos: 
+
+**NOTA: TODOS OS TEMPOS DE EXECUÇÃO, ESTÃO NO ARQUIVO DENTRO DA PASTA DO TRABALHO....**
+
+| Valores     | Aleatório(Tempo)        | Decrescente(Tempo)     | Crescente (Tempo)       |
+| ----------- | ----------------------- | ---------------------- | ----------------------- |
+| 10          | 0.004                   | 0.001                  | 0.001                   |
+| 100         | 0.014                   | 0.008                  | 0.005                   |
+| 1.000       | 0.326                   | 0.062                  | 0.075                   |
+| 10.000      | 1.783                   | 1.101                  | 1.389                   |
+| 100.000     | 47.342                  | 36.944                 | 35.237                  |
+| 500.000     | 142.978                 | 98.390                 | 87.473                  |
+| 1.000.000   | 174.377                 | 99.008                 | 108.729                 |
+| 10.000.000  | 2,018 - ***Segundos***  | 962.411                | 967.106                 |
+| 100.000.000 | 21,862 - ***Segundos*** | 10,531- ***Segundos*** | 10,757 - ***Segundos*** |
 
 
-
-| Valores | Aleatório(Tempo) | Decrescente(Tempo) | Crescente (Tempo) |
-| ------- | ---------------- | ------------------ | ----------------- |
-| 10      | 0.000            | 0.000              | 0.000             |
-| 100     | 0.000            | 0.000              | 0.000             |
-| 1.000   | 0.009            | 0.006              | 0.003             |
-| 10.000  | 0.550            | 0.584              | 0.309             |
-| 100.000 | 66.662           | 60.254             | 31.024            |
-| 500.000 | 1584.879         | 1693.881           | 802.110           |
-
-
-
-O Gráfico abaixo faz um comparativo entre os tempos e valores. BubleSort melhorado
-
-
-
-![ ](/home/fernando/Downloads/chart.png) 
-
-Como o mergeSort tem complexidade `n log(n)` podemos medir o tempo de execução do algoritmo em um tempo aceitavel, você os encontra na tabela abaixo: 
-
-| 1.000.0000  | Horas | Dias |
-| :---------- | ----- | ---- |
-| 10.000.000  |       |      |
-| 100.000.000 |       |      |
 
 
 
@@ -441,7 +432,7 @@ Como o mergeSort tem complexidade `n log(n)` podemos medir o tempo de execução
 
 ## HeapSort
 
-O heapsort utiliza uma estrutura de dados chamada [heap](https://pt.wikipedia.org/wiki/Heap), para ordenar os elementos à medida que os insere na estrutura. Assim, ao final das inserções, os elementos podem ser sucessivamente removidos da raiz da heap, na ordem desejada, lembrando-se sempre de manter a propriedade de max-heap.
+O heapsort utiliza uma estrutura de dados chamada heap, para ordenar os elementos à medida que os insere na estrutura. Assim, ao final das inserções, os elementos podem ser sucessivamente removidos da raiz da heap, na ordem desejada, lembrando-se sempre de manter a propriedade de max-heap.
 
 Um heap pode ser representada como uma árvore, observe, somente **represetando** para melhor vizualização.
 
@@ -457,7 +448,7 @@ Abaixo um gif que demonstra o algoritmo em execução:
 
 ###### Estabilidade:
 
-O heapsort não é um algoritmo de [ordenação estável](https://pt.wikipedia.org/wiki/Ordenação_estável). Porém, é possível adaptar a estrutura a ser ordenada de forma a tornar a ordenação estável.
+O heapsort não é um algoritmo de ordenação estável. Porém, é possível adaptar a estrutura a ser ordenada de forma a tornar a ordenação estável.
 
 
 
@@ -477,31 +468,23 @@ $$
 
 
 
-| Valores | Aleatório(Tempo) | Decrescente(Tempo) | Crescente (Tempo) |
-| ------- | ---------------- | ------------------ | ----------------- |
-| 10      | 0.000            | 0.000              | 0.000             |
-| 100     | 0.000            | 0.000              | 0.000             |
-| 1.000   | 0.009            | 0.006              | 0.003             |
-| 10.000  | 0.550            | 0.584              | 0.309             |
-| 100.000 | 66.662           | 60.254             | 31.024            |
-| 500.000 | 1584.879         | 1693.881           | 802.110           |
+Tabela de valores da **média HeapSort** - milisegundos: 
+
+**NOTA: TODOS OS TEMPOS DE EXECUÇÃO, ESTÃO NO ARQUIVO DENTRO DA PASTA DO TRABALHO....**
+
+| Valores     | Aleatório(Tempo)        | Decrescente(Tempo)     | Crescente (Tempo)       |
+| ----------- | ----------------------- | ---------------------- | ----------------------- |
+| 10          | 0.002                   | 0.001                  | 0.002                   |
+| 100         | 0.023                   | 0.024                  | 0.037                   |
+| 1.000       | 0.192                   | 0.386                  | 0.274                   |
+| 10.000      | 3.324                   | 6.904                  | 4.791                   |
+| 100.000     | 65.074                  | 22.842                 | 24.090                  |
+| 500.000     | 165.324                 | 98.390                 | 87.473                  |
+| 1.000.000   | 295.120                 | 194.478                | 190.590                 |
+| 10.000.000  | 4,382 - ***Segundos***  | 2,054 - ***Segundos*** | 2,072 - ***Segundos***  |
+| 100.000.000 | 62,490 - ***Segundos*** | 23,161- ***Segundos*** | 23,095 - ***Segundos*** |
 
 
-
-O Gráfico abaixo faz um comparativo entre os tempos e valores. BubleSort melhorado
-
-
-
-![ ](/home/fernando/Downloads/chart.png)
-
-
-
-Como o mergeSort tem complexidade `O(n*logn)` podemos medir o tempo de execução do algoritmo em um tempo aceitavel, você os encontra na tabela abaixo: 
-
-| 1.000.0000  | Horas | Dias |
-| :---------- | ----- | ---- |
-| 10.000.000  |       |      |
-| 100.000.000 |       |      |
 
 
 
@@ -539,57 +522,15 @@ $$
 
 
 
-| Valores | Aleatório(Tempo) | Decrescente(Tempo) | Crescente (Tempo) |
-| ------- | ---------------- | ------------------ | ----------------- |
-| 10      | 0.000            | 0.000              | 0.000             |
-| 100     | 0.000            | 0.000              | 0.000             |
-| 1.000   | 0.009            | 0.006              | 0.003             |
-| 10.000  | 0.550            | 0.584              | 0.309             |
-| 100.000 | 66.662           | 60.254             | 31.024            |
-| 500.000 | 1584.879         | 1693.881           | 802.110           |
+Os gráficos do quickSort estão melhores desenvolvidos na parte de gráficos..
+
+Os valores de várias execuções do quickSort também se encontram nos arquivos, lá se encontram 3 execuções de cada uma das variações do quickSort
 
 
-
-O Gráfico abaixo faz um comparativo entre os tempos e valores. BubleSort melhorado
-
-
-
-![ ](/home/fernando/Downloads/chart.png)
-
-
-
-Como o QuickSort tem complexidade de pior caso `O(n²)` orimos aproximas  o tempo de execução do algoritmo, você os encontra na tabela abaixo: 
-
-| 1.000.0000  | Horas | Dias |
-| :---------- | ----- | ---- |
-| 10.000.000  |       |      |
-| 100.000.000 |       |      |
 
 
 
 Considerações: Por mais que o o QuickSort possua o pior caso em `n²` ele é o mais utilizado na prática, isso se da pelo fato de  que os casos médios das ordenações ficam em `O(n*logn)`, O quickSort também é um dos algoritmos mais conhecidos no mundo,  e ele é customizado para subrir a necessidade do caso.
-
-
-
-
-
-Qual algoritmo usar ?
-
-Para entender essa questão, precisamos ter uma idéa geral de como os dados estão distribuidos no veteor, ou seja.
-
-Vamos a um exemplo, se temos um vetor com Milhões de elementos e sabemos que nesse vetor os valores estão distribuidos de forma ordenada, qual seria o melhor algoritmo ?
-
-
-
-Exemplo do vetor:  `[ 1, 2, 3, 5, 9, 2, 7, 8, 9, 10, 14, 11, 12, 13... ]`
-
-Os dados estão distrubiodos mais ou menos nessa ordem, alguns elementos estão em desordem.
-
-
-
-O algoritmo mais recomendado aqui é o InsertionSort, por quê ?
-
-Pelo fato 
 
 
 
@@ -601,4 +542,136 @@ Pelo fato
 
 
 
-Os gráficos abaixo 
+Nesta seção, você poderá encontrar vários gráficos contendo comparações entre os algoritmos analisados aqui nessa documentação. Atente-se para a medição do tempo, alguns gráficos mostram medições de valores em *milisegundos*, e outros por sua vez, apresentam os tempos em *segundos*. 
+
+
+
+Os dados foram obtidos no laboratório de computação 4, da UEMS, foram coletadas 3 execuções de cada algoritmo e feito uma media somando os tempos de execução e divido por 3. Os gráficos abaixo apresentam algumas médias dos dados coletados, todos os dados obtidos podem ser visto no arquivo no diretório desse trabalho, também existe um arquivo chamado média dos valores onde contem as médias de cada algoritmo. 
+
+
+
+**10 ELEMENTOS**
+
+![Comparação entre algoritmos de ordenação 10](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação 10.png) 
+
+
+
+![info-a-10](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/info-a-10.png)  ![info-c-10](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/info-c-10.png)![info-d-10](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/info-d-10.png)
+
+
+
+
+
+
+
+**100 ELEMENTOS**
+
+ ![Comparação entre algoritmos de ordenação -  100](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação -  100.png) 
+
+
+
+
+
+![info-100-a-a](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/info-100-a-a.png)![info-100-c-c](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/info-100-c-c.png)![info-100-d-d](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/info-100-d-d.png)
+
+
+
+
+
+**1000 ELEMENTOS**
+
+![Comparação entre algoritmos de ordenação 1000](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação 1000.png) 
+
+
+
+
+
+**10.000 ELEMENTOS**
+
+![Comparação entre algoritmos de ordenação 10000](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação 10000.png) 
+
+
+
+
+
+**100.000 ELEMENTOS**
+
+ ![Comparação entre algoritmos de ordenação 100000](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação 100000.png)
+
+
+
+**500.000 ELEMENTOS** 
+
+![Comparação entre algoritmos de ordenação - 500000](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação - 500000.png) 
+
+
+
+**1.000.000 ELEMENTOS**
+
+![Comparação entre algoritmos de ordenação 1000000](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação 1000000.png) 
+
+
+
+
+
+**10.000.000 ELEMENTOS**
+
+**![Comparação entre algoritmos de ordenação - 10000000](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação - 10000000.png)**
+
+
+
+
+
+**100.000.000 ELEMENTOS**
+
+![Comparação entre algoritmos de ordenação - 100000000](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação - 100000000.png) 
+
+
+
+
+
+###### Comparação entre variações do quickSort 
+
+
+
+**10 ELEMENTOS**
+
+![Comparação entre algoritmos de ordenação - q](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação - q.png)  
+
+
+
+
+
+
+
+**100 ELEMENTOS**
+
+![Comparação entre algoritmos de ordenação Q1](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação Q1.png) 
+
+
+
+
+
+
+
+**1.000 ELEMENTOS**
+
+![Comparação entre algoritmos de ordenação - Q2](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação - Q2.png)  
+
+
+
+
+
+
+
+**100.000 ELEMENTOS**
+
+![Comparação entre algoritmos de ordenação  q3](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação  q3.png) 
+
+
+
+
+
+> Nome: Fernando Lima
+>
+> Rgm: 36716

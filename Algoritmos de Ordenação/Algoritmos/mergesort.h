@@ -25,7 +25,7 @@ void intercala(int32_t L[], int32_t tmp[], int32_t ini1, int32_t ini2, int32_t f
 
 }
 
-void merge_sort(int32_t *L, int32_t *Tmp,  int32_t esq, int32_t dir) {
+void mergeSort(int32_t *L, int32_t *Tmp,  int32_t esq, int32_t dir) {
 
     int32_t centro;
 
@@ -33,8 +33,8 @@ void merge_sort(int32_t *L, int32_t *Tmp,  int32_t esq, int32_t dir) {
 
         centro = (esq + dir) / 2;
 
-        merge_sort(L, Tmp, esq, centro);
-        merge_sort(L, Tmp, centro + 1, dir);
+        mergeSort(L, Tmp, esq, centro);
+        mergeSort(L, Tmp, centro + 1, dir);
 
         intercala(L, Tmp, esq, centro + 1, dir);
     }
