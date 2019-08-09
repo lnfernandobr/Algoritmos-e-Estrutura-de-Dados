@@ -26,7 +26,7 @@ A ideia é percorrer o vetor diversas vezes, e a cada passagem fazer flutuar par
 
 Um gif com o funciomaneto do algoritmo:
 
-![bubleSort](/home/fernando/CLionProjects/trabalho2/images/bubleSort.gif)  
+![bubleSort](/images/bubleSort.gif)  
 
  
 
@@ -552,7 +552,8 @@ Os dados foram obtidos no laboratório de computação 4, da UEMS, foram coletad
 
 **10 ELEMENTOS**
 
-![Comparação entre algoritmos de ordenação 10](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação 10.png) 
+ 
+![Comparação entre algoritmos de ordenação 10](https://github.com/fernando/lnfernandobr/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenaçãoraw/master/images/Comparação entre algoritmos de ordenação 10.png) 
 
 
 
