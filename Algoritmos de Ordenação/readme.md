@@ -26,7 +26,11 @@ A ideia é percorrer o vetor diversas vezes, e a cada passagem fazer flutuar par
 
 Um gif com o funciomaneto do algoritmo:
 
+<<<<<<< HEAD
 ![bubleSort](/images/bubleSort.gif)  
+=======
+![bubleSort](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/bubleSort.gif)  
+>>>>>>> ebe97e2b15a1fc3aeb88343a67931b381e83539d
 
  
 
@@ -34,22 +38,6 @@ Um gif com o funciomaneto do algoritmo:
 
 O BubleSort  é um algoritmo de **ordenação estável**.
 
-
-
-
-
-
-
-
-
-###### Complexidade:
-
-$$
-\!\!\!\!\!\!Pior \:\: caso:
-O(n^2) \\ 
-Caso \: médio: O(n^2) \\
-Melhor \: caso: O(n^2)
-$$
 
 
 
@@ -119,79 +107,6 @@ function setup() {
 
 
 Você também pode vizualizar um gráfico de comparação entre todos os algoritmos de ordenação analisados aqui, na seção - Gráficos.
-
-
-
-Agora, vamos analisar o tempo de execução do algoritmo bubleSort com entradas muito maiores, vamos tratar aqui nessa sucitan analise valores na casa dos 1, 10, 100 Milhões de elementos.
-
-Primeiro vamos fazer uma conta simples com base nos dados que já posuimos para aproximarmos o tempo de execução real do algoritmo sendo implementado em alguma linguagem de programação.
-
-
-
-Temos que a complexidade do algoritmo em todos os casos é:
-
-
-$$
-Complexidadade:O(n^2)
-$$
- Agora, calcularemos quantas operações *(troca)* o mesmo fará com uma entrada de 1.000.000 de elementos no pior caso:
-
-
-
-
-$$
-\begin{eqnarray}
-500.000^2 \: \: \: \:  =\: \: \: \: \: \:    250000000000 \\
-1.000.000^2 \: =\: \: \:\:\:\:\:\:\:\:\:\:  \: \: \: \: \: \:   1e+12 
-
-\end{eqnarray}
-$$
-
-$$
-\begin{eqnarray}
-\\\\\
-250000000000 \:----\!> 1693.881\\
-1e+12 \:\:\:\:\:\:\:\:\:\:\:\:\:\:----\!>\:\:\:\:\:x\:\:\:\:\:\:\:
-\end{eqnarray}
-$$
-
-
-$$
-x \approx 6775.524
-$$
-
-
-Após feita uma simulação real em um computador com valores randomicos o tempo marcado foi de: `6665.009` ou  1.85 Horas, muito próximo do esperado, agora veremos uma média para os valores de `10.000.000` e` 100.000.000`
-
-
-
-Os procedimentos seguidos para calcular o tempo de execução para as entradas seguinte é o memso usado para a entrada de `1.000.000`
-
-
-
-
-
-Entrada de 10.000.000 para o BubleSort é  de:
-$$
-n
-= 10.000.000\\
-Tempo = 188.209 Horas
-$$
-Ou Aproximadamente **8** Dias
-
-
-
-
-
-Entrada de 100.000.000 para o BubleSort é  de:
-$$
-n
-= 100.000.000\\
-Tempo = 313 Horas
-$$
-Ou Aproximadamente **13** Dias
-
-
 
 
 
@@ -307,24 +222,11 @@ Aproximações de tempo para entradas de `1.000.000`, `10.000.000` e `100.000.00
 
 
 
-![insertionSort](/home/fernando/CLionProjects/trabalho2/images/insertionSort.gif)
+![insertionSort](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/insertionSort.gif)
 
 ###### Estabilidade:
 
 O InsertionSort  é um algoritmo de **ordenação estável**.
-
-
-
-
-
-###### Complexidade:
-
-$$
-\!\!\!\!\!\!Pior \:\: caso:
-O(n^2) \\ 
-Caso \: médio: O(n^2) \\
-Melhor \: caso: O(n)
-$$
 
 
 
@@ -385,7 +287,7 @@ No MergeSort sua ideia básica consiste em Dividir (o problema em vários subpro
 
 
 
-![mergeSort](/home/fernando/CLionProjects/trabalho2/images/mergeSort.gif)
+![mergeSort](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/mergeSort.gif)
 
 
 
@@ -396,15 +298,6 @@ O mergeSort  é um algoritmo de **ordenação estável**, e é possível adaptar
 
 
 
-
-###### Complexidade:
-
-$$
-\!\!\!\!\!\!Pior caso \:\: caso:
-O(n *logn) \\ 
-Caso \: médio: O(n *logn) \\
-Melhor \: caso: O(n*logn)
-$$
 
 
 
@@ -436,11 +329,11 @@ O heapsort utiliza uma estrutura de dados chamada heap, para ordenar os elemento
 
 Um heap pode ser representada como uma árvore, observe, somente **represetando** para melhor vizualização.
 
-![heap-avoreve](/home/fernando/CLionProjects/trabalho2/images/heap-avoreve.gif)
+![heap-avoreve](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/heap-avoreve.gif)
 
 Abaixo um gif que demonstra o algoritmo em execução:
 
-![heapSort](/home/fernando/CLionProjects/trabalho2/images/heapSort.gif)
+![heapSort](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/heapSort.gif)
 
 
 
@@ -450,17 +343,6 @@ Abaixo um gif que demonstra o algoritmo em execução:
 
 O heapsort não é um algoritmo de ordenação estável. Porém, é possível adaptar a estrutura a ser ordenada de forma a tornar a ordenação estável.
 
-
-
-
-
-###### Complexidade:
-
-$$
-\!\!\!\!\!\!Pior caso \:\: caso:\: O(n^2) \\ 
-Caso \: médio: O(n *logn) \\
-Melhor \: caso: O(n*logn)
-$$
 
 
 
@@ -496,7 +378,7 @@ Como o mergeSort , o quicksort dividi e conquista, e é um algoritmo recursivo. 
 
 
 
-![quicksort](/home/fernando/CLionProjects/trabalho2/images/quicksort.gif)
+![quicksort](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/quicksort.gif)
 
 
 
@@ -508,15 +390,6 @@ O algoritm quicksort é um método de ordenação muito rápido e eficiente, inv
 
 O quicksort é um algoritmo de ordenação por comparação não-estável
 
-
-
-###### Complexidade:
-
-$$
-\!\!\!\!\!\!Pior caso \:\: caso:\: O(n^2) \\ 
-Caso \: médio: O(n *logn) \\
-Melhor \: caso: O(n*logn)
-$$
 
 
 
@@ -552,12 +425,15 @@ Os dados foram obtidos no laboratório de computação 4, da UEMS, foram coletad
 
 **10 ELEMENTOS**
 
+<<<<<<< HEAD
  
 ![Comparação entre algoritmos de ordenação 10](https://github.com/fernando/lnfernandobr/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenaçãoraw/master/images/Comparação entre algoritmos de ordenação 10.png) 
+=======
+![Comparação entre algoritmos de ordenação 10](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/Compara%C3%A7%C3%A3o%20entre%20algoritmos%20de%20ordena%C3%A7%C3%A3o%2010.png)
+>>>>>>> ebe97e2b15a1fc3aeb88343a67931b381e83539d
 
 
-
-![info-a-10](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/info-a-10.png)  ![info-c-10](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/info-c-10.png)![info-d-10](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/info-d-10.png)
+![info-a-10](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/info-a-10.png)  ![info-c-10](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/info-c-10.png)![info-d-10](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/info-d-10.png)
 
 
 
@@ -567,13 +443,10 @@ Os dados foram obtidos no laboratório de computação 4, da UEMS, foram coletad
 
 **100 ELEMENTOS**
 
- ![Comparação entre algoritmos de ordenação -  100](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação -  100.png) 
+ ![Comparação entre algoritmos de ordenação -  100](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/Compara%C3%A7%C3%A3o%20entre%20algoritmos%20de%20ordena%C3%A7%C3%A3o%20-%20%20100.png) 
 
 
 
-
-
-![info-100-a-a](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/info-100-a-a.png)![info-100-c-c](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/info-100-c-c.png)![info-100-d-d](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/info-100-d-d.png)
 
 
 
@@ -581,7 +454,7 @@ Os dados foram obtidos no laboratório de computação 4, da UEMS, foram coletad
 
 **1000 ELEMENTOS**
 
-![Comparação entre algoritmos de ordenação 1000](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação 1000.png) 
+![Comparação entre algoritmos de ordenação 1000](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/Compara%C3%A7%C3%A3o%20entre%20algoritmos%20de%20ordena%C3%A7%C3%A3o%201000.png) 
 
 
 
@@ -589,7 +462,7 @@ Os dados foram obtidos no laboratório de computação 4, da UEMS, foram coletad
 
 **10.000 ELEMENTOS**
 
-![Comparação entre algoritmos de ordenação 10000](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação 10000.png) 
+![Comparação entre algoritmos de ordenação 10000](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/Compara%C3%A7%C3%A3o%20entre%20algoritmos%20de%20ordena%C3%A7%C3%A3o%2010000.png) 
 
 
 
@@ -597,19 +470,19 @@ Os dados foram obtidos no laboratório de computação 4, da UEMS, foram coletad
 
 **100.000 ELEMENTOS**
 
- ![Comparação entre algoritmos de ordenação 100000](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação 100000.png)
+ ![Comparação entre algoritmos de ordenação 100000](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/Compara%C3%A7%C3%A3o%20entre%20algoritmos%20de%20ordena%C3%A7%C3%A3o%20100000.png)
 
 
 
 **500.000 ELEMENTOS** 
 
-![Comparação entre algoritmos de ordenação - 500000](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação - 500000.png) 
+![Comparação entre algoritmos de ordenação - 500000](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/Compara%C3%A7%C3%A3o%20entre%20algoritmos%20de%20ordena%C3%A7%C3%A3o%20-%20500000.png) 
 
 
 
 **1.000.000 ELEMENTOS**
 
-![Comparação entre algoritmos de ordenação 1000000](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação 1000000.png) 
+![Comparação entre algoritmos de ordenação 1000000](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/Compara%C3%A7%C3%A3o%20entre%20algoritmos%20de%20ordena%C3%A7%C3%A3o%201000000.png) 
 
 
 
@@ -617,7 +490,7 @@ Os dados foram obtidos no laboratório de computação 4, da UEMS, foram coletad
 
 **10.000.000 ELEMENTOS**
 
-**![Comparação entre algoritmos de ordenação - 10000000](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação - 10000000.png)**
+**![Comparação entre algoritmos de ordenação - 10000000](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/Compara%C3%A7%C3%A3o%20entre%20algoritmos%20de%20ordena%C3%A7%C3%A3o%20-%2010000000.png)**
 
 
 
@@ -625,7 +498,7 @@ Os dados foram obtidos no laboratório de computação 4, da UEMS, foram coletad
 
 **100.000.000 ELEMENTOS**
 
-![Comparação entre algoritmos de ordenação - 100000000](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação - 100000000.png) 
+![Comparação entre algoritmos de ordenação - 100000000](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/Compara%C3%A7%C3%A3o%20entre%20algoritmos%20de%20ordena%C3%A7%C3%A3o%20-%20100000000.png) 
 
 
 
@@ -637,7 +510,7 @@ Os dados foram obtidos no laboratório de computação 4, da UEMS, foram coletad
 
 **10 ELEMENTOS**
 
-![Comparação entre algoritmos de ordenação - q](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação - q.png)  
+![Comparação entre algoritmos de ordenação - q](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/Compara%C3%A7%C3%A3o%20entre%20algoritmos%20de%20ordena%C3%A7%C3%A3o%20-%20q.png)  
 
 
 
@@ -647,7 +520,7 @@ Os dados foram obtidos no laboratório de computação 4, da UEMS, foram coletad
 
 **100 ELEMENTOS**
 
-![Comparação entre algoritmos de ordenação Q1](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação Q1.png) 
+![Comparação entre algoritmos de ordenação Q1](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/Compara%C3%A7%C3%A3o%20entre%20algoritmos%20de%20ordena%C3%A7%C3%A3o%20Q1.png) 
 
 
 
@@ -657,7 +530,7 @@ Os dados foram obtidos no laboratório de computação 4, da UEMS, foram coletad
 
 **1.000 ELEMENTOS**
 
-![Comparação entre algoritmos de ordenação - Q2](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação - Q2.png)  
+![Comparação entre algoritmos de ordenação - Q2](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/Compara%C3%A7%C3%A3o%20entre%20algoritmos%20de%20ordena%C3%A7%C3%A3o%20-%20Q2.png)  
 
 
 
@@ -667,7 +540,7 @@ Os dados foram obtidos no laboratório de computação 4, da UEMS, foram coletad
 
 **100.000 ELEMENTOS**
 
-![Comparação entre algoritmos de ordenação  q3](/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenação/images/Comparação entre algoritmos de ordenação  q3.png) 
+![Comparação entre algoritmos de ordenação  q3](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/Compara%C3%A7%C3%A3o%20entre%20algoritmos%20de%20ordena%C3%A7%C3%A3o%20%20q3.png) 
 
 
 
