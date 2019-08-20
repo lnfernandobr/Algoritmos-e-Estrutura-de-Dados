@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Arvores/main.c" "/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Arvores/cmake-build-debug/CMakeFiles/main.dir/main.c.o"
+  "/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Arvores/TrabalhoAVL/main.c" "/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Arvores/TrabalhoAVL/cmake-build-debug/CMakeFiles/main.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

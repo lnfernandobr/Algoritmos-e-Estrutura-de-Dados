@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Arvores/TrabalhoAVL/avl.h
+stdint.h
+-
+stdlib.h
+-
+
+/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Arvores/TrabalhoAVL/main.c
+stdio.h
+-
+avl.h
+/home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Arvores/TrabalhoAVL/avl.h
+
