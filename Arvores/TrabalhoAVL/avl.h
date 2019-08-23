@@ -101,6 +101,10 @@ typedef struct s_arq_no NO_AVL;
 AVL* criaNo(int32_t valor) {
 
     AVL* no = (AVL*) malloc(sizeof(AVL));
+    if(no == NULL) {
+        puts("Erro em alocação de memoria\n");
+        exit(-1);
+    }
     no->chave   = valor;
     no->esq   = NULL;
     no->dir  = NULL;
@@ -109,7 +113,8 @@ AVL* criaNo(int32_t valor) {
     return no;
 }
 
-void caso1(AVL** pt, Bool h) {
+
+void caso1(AVL** pt, Bool *h) {
 
     AVL *ptu = (*pt)->esq;
 
@@ -133,71 +138,92 @@ void caso1(AVL** pt, Bool h) {
     };
 
     (*pt)->bal = 0;
-    h = false;
+    *h = false;
 }
 
-void caso2(AVL** pt, Bool h) {
-
-}
-
-AVL* insere (int32_t valor, AVL* pt, Bool h) {
-
-    if(pt == NULL) {
-        criaNo(pt);
-        h = true;
+void caso2(AVL **pt, Bool *h) {
+    AVL *ptu = (*pt)->dir;
+    if(ptu->bal == 1) {
+        (*pt)->dir = ptu->esq;
+        ptu->esq = *pt;
+        (*pt)->bal = 0;
+        *pt = ptu;
     }
 
     else {
-        if(valor == pt->chave) {
+        AVL *ptv = (*pt)->esq;
+        ptu->esq = ptv->dir;
+        ptv->dir  = ptu;
+        (*pt)->dir = ptv->esq;
+        ptv->esq = *pt;
+        (*pt)->bal = ptv->bal == 1 ? -1: 0;
+        ptu->bal = ptv->bal == -1 ? 1: 0;
+        *pt = ptv;
+
+    }
+
+    (*pt)->bal = 0;
+    *h = 0;
+}
+
+void insere (int32_t valor, AVL **pt, Bool *h) {
+
+    if(*pt == NULL) {
+        *pt = criaNo(valor);
+        *h = 1;
+    }
+
+    else {
+        if(valor == (*pt)->chave) {
             puts("Ops, não pode inserir chaves repetidos em uma AVL\n");
-            return NULL;
+            return;
         }
 
-        if(valor < pt->chave) {
-            insere(valor,pt->esq, h);
+        if(valor < (*pt)->chave) {
+            insere(valor,&((*pt)->esq), h);
 
-            if(h == true) {
-                switch (pt->bal) {
+            if(*h == true) {
+                switch ((*pt)->bal) {
                     case 1:
-                        pt->bal = 0, h = false;
+                        (*pt)->bal = 0, *h = false;
                         break;
 
                     case 0:
-                        pt->bal = -1;
+                        (*pt)->bal = -1;
                         break;
 
                     case -1:
-                        caso1(&pt, h);
+                        caso1(&(*pt), h);
                         break;
 
                     default:
                         puts("Valor de balanço errado, aconteceu algum problema!\n");
-                        return NULL;
+                        return;
                 }
             }
 
         }
 
         else {
-            insere(valor, pt->dir, h);
+            insere(valor, &((*pt)->dir), h);
 
-            if(h == true) {
-                switch (pt->bal) {
+            if(*h == true) {
+                switch ((*pt)->bal) {
                     case -1:
-                        pt->bal = 0, h = false;
+                        (*pt)->bal = 0, *h = false;
                         break;
 
                     case 0:
-                        pt->bal = 1;
+                        (*pt)->bal = 1;
                         break;
 
                     case 1:
-                        caso2(&pt, h);
+                        caso2(&(*pt), h);
                         break;
 
                     default:
                         puts("Valor de balanço errado, aconteceu algum problema!\n");
-                        return NULL;
+                        return ;
                 }
             }
         }
