@@ -169,16 +169,46 @@ void posOrder(TREE *pt) {
     printf("%d ", pt->key);
 }
 
+void minMax(TREE *pt, unsigned int *max, unsigned int *min) {
+
+
+    if(pt->left != NULL)
+        minMax(pt->left, max, min);
+
+    if(pt->key > *max)
+        *max = pt->key;
+
+    if(pt->key < *min)
+        *min = pt->key;
+
+    if(pt->right != NULL)
+        minMax(pt->right, max, min);
+
+}
+
+TREE *successor(TREE *pt) {
+
+    if(pt->left != NULL)
+        successor(pt->left);
+    else
+        return pt;
+
+}
+
 int main(void) {
     TREE *tree = NULL;
 
     /* insertion in binary tree */
-    insertion(&tree, 7);
-    insertion(&tree, 6);
-    insertion(&tree, 25);
+    insertion(&tree, 24);
+    insertion(&tree, 72);
+    insertion(&tree, 19);
+    insertion(&tree, 34);
     insertion(&tree, 100);
-    insertion(&tree, 11);
+    insertion(&tree, 70);
+    insertion(&tree, 7);
+    insertion(&tree, 23);
     insertion(&tree, 13);
+    insertion(&tree, 21);
 
     /* show tree */
     printf("In Order: ");
@@ -187,6 +217,21 @@ int main(void) {
     /* delete tree node */
     TREE *father = NULL;
     delete(&tree, &father,7);
+
+    unsigned int max = tree->key, min = tree->key;
+    minMax(tree, &max, &min);
+
+    printf("\nBiggest Element: %i\n", max);
+    printf("SmallEst Element: %i\n", min);
+
+    int state, value;
+    printf("Successor a ser encontrado\n");
+    scanf("%d", &value);
+    TREE *p = search(value, tree, &state);
+    if(state == 1) {
+        TREE *suc = successor(p->right);
+        printf("\nSuccessor from %d: %i", value, suc->key);
+    }
 
     printf("\nAfter exclusion: ");
     inOrder(tree);

@@ -11,6 +11,12 @@ stdint.h
 -
 stdlib.h
 -
+stdio.h
+-
+stdarg.h
+-
+assert.h
+-
 
 /home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Arvores/TrabalhoAVL/main.c
 stdio.h

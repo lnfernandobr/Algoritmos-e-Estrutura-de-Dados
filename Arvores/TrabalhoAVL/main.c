@@ -5,15 +5,30 @@
 
 int main(void) {
     AVL *ptRaiz = NULL;
-    Bool state = 0;
+    int state = 0;
 
-    insere(100, &ptRaiz, &state);
-    insere(200, &ptRaiz, &state);
-    insere(20, &ptRaiz, &state);
-    insere(25, &ptRaiz, &state);
-    insere(150, &ptRaiz, &state);
+    insere(&ptRaiz,-112,  &state);
+    insere( &ptRaiz,3, &state);
+    insere(&ptRaiz,-381,  &state);
+    insere(&ptRaiz,225,  &state);
+    insere(&ptRaiz,-76,  &state);
+    insere( &ptRaiz, -399,&state);
+    insere(&ptRaiz,-475,  &state);
+    insere( &ptRaiz,907, &state);
+    insere(&ptRaiz,32,  &state);
+    insere(&ptRaiz,-93,  &state);
+    insere(&ptRaiz,-492,  &state);
+    insere(&ptRaiz,-373,  &state);
+    insere( &ptRaiz,-314, &state);
+    insere(&ptRaiz,-222,  &state);
+    insere(&ptRaiz,378,  &state);
+    insere(&ptRaiz,136,  &state);
 
-    insere(151, &ptRaiz, &state);
+//    int res = busca(ptRaiz, 20);
+//
+//    if(res) {
+//        puts("apagou");
+//    } else puts("não apagou");
 
 //    insere(1, &ptRaiz, &state);
 //    insere(30, &ptRaiz, &state);
