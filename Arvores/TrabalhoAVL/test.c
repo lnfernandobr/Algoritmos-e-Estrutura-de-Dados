@@ -1,164 +1,215 @@
-#include <stdint.h>
-#include <stdlib.h>
+void caso1remocao(AVL **pt, char *h){
 
+    AVL *ptu;
+    AVL *ptv;
 
-typedef unsigned int Bool;
-int true = 1;
-int false = 0;
+    ptu = (*pt)->esq;
 
-struct s_no {
-    int32_t chave:28;
-    int32_t bal:2;
-    int32_t reservado:2; /* sem uso */
-    struct s_no* esq;
-    struct s_no* dir;
-};
-
-struct s_arq_no {
-    int32_t chave:28;
-    int32_t bal:2;
-    uint32_t esq:1;
-    uint32_t dir:1;
-};
-
-typedef struct s_no AVL;
-typedef struct s_arq_no NO_AVL;
-
-
-AVL* criaNo(int32_t valor) {
-
-    AVL* no = (AVL*) malloc(sizeof(AVL));
-    if(no == NULL) {
-        puts("Erro em alocação de memoria\n");
-        exit(-1);
-    }
-
-    no->chave   = valor;
-    no->esq   = NULL;
-    no->dir  = NULL;
-    no->bal = 0;
-
-    return no;
-}
-void caso1(AVL** pt, Bool *h) {
-
-    AVL *ptu = (*pt)->esq;
-
-    if(ptu->bal == -1) {
+    //Simples direita
+    if(ptu->bal < 1)
+    {
         (*pt)->esq = ptu->dir;
-        (*pt)->dir = *pt;
-        (*pt)->bal = 0;
+        ptu->dir = (*pt);
+
+        if(ptu->bal == 0){
+            ptu->bal = 1;
+            *h = 'f';
+        }
+        else{
+            ptu->bal = 0;
+        }
         (*pt) = ptu;
-
     }
-
+        //Dupla direita
     else {
-
-        AVL *ptv = ptu->dir;
+        ptv = ptu->dir;
         ptu->dir = ptv->esq;
         ptv->esq = ptu;
-
         (*pt)->esq = ptv->dir;
-        ptv->dir = *pt;
+        ptv->dir = (*pt);
 
-        (*pt)->bal  = ptv->bal == -1 ?  1 : 0;
-        ptu->bal  = ptv->bal == 1 ?  -1 : 0;
-
-        *pt = ptv;
-
-    };
-
-    (*pt)->bal = 0;
-    *h = false;
-}
-void caso2(AVL **pt, Bool *h) {
-
-    AVL *ptu = (*pt)->dir;
-
-    if(ptu->bal == 1) {
-        (*pt)->dir = ptu->esq;
-        ptu->esq = *pt;
-        (*pt)->bal = 0;
-        *pt = ptu;
-    }
-
-    else {
-        AVL *ptv = (*pt)->esq;
-        ptu->esq = ptv->dir;
-        ptv->dir  = ptu;
-        (*pt)->dir = ptv->esq;
-        ptv->esq = *pt;
-        (*pt)->bal = ptv->bal == 1 ? -1: 0;
-        ptu->bal = ptv->bal == -1 ? 1: 0;
-        *pt = ptv;
-
-    }
-
-    (*pt)->bal = 0;
-    *h = 0;
-}
-
-void insere (int32_t valor, AVL **pt, Bool *h) {
-
-    if(*pt == NULL) {
-        *pt = criaNo(valor);
-        *h = 1;
-    }
-
-    else {
-        if(valor == (*pt)->chave) {
-            puts("Ops, não pode inserir chaves repetidos em uma AVL\n");
-            return;
+        if(ptv->bal == -1) {
+            (*pt)->bal = 1;
         }
-
-        if(valor < (*pt)->chave) {
-            insere(valor,&((*pt)->esq), h);
-
-            if(*h == true) {
-                switch ((*pt)->bal) {
-                    case 1:
-                        (*pt)->bal = 0, *h = false;
-                        break;
-
-                    case 0:
-                        (*pt)->bal = -1;
-                        break;
-
-                    case -1:
-                        caso1(&(*pt), h);
-                        break;
-
-                    default:
-                        puts("Valor de balanço errado, aconteceu algum problema!\n");
-                        return;
-                }
-            }
-
-        }
-
         else {
-            insere(valor, &((*pt)->dir), h);
+            (*pt)->bal = 0;
+        }
 
-            if(*h == true) {
-                switch ((*pt)->bal) {
-                    case -1:
-                        (*pt)->bal = 0, *h = false;
-                        break;
+        if(ptv->bal == 1) {
+            ptu->bal = -1;
+        }
+        else {
+            ptu->bal = 0;
+        }
 
-                    case 0:
-                        (*pt)->bal = 1;
-                        break;
+        (*pt) = ptv;
+        ptv->bal = 0;
+    }
+}
 
-                    case 1:
-                        caso2(&(*pt), h);
-                        break;
+void caso2remocao(AVL **pt, char *h){
+    AVL *ptu = (*pt)->dir;
+    AVL *ptv;
 
-                    default:
-                        puts("Valor de balanço errado, aconteceu algum problema!\n");
-                        return ;
-                }
+    //Rotação simples esquerda
+    if(ptu->bal > -1)
+    {
+        (*pt)->dir = ptu->esq;
+        ptu->esq = (*pt);
+
+        if(ptu->bal == 0)
+            ptu->bal = -1;
+            *h = 'f';
+        else
+            ptu->bal = 0;
+
+        (*pt)->bal = 0;
+        (*pt) = ptu;
+    }
+        //Rotação dupla esquerda
+    else {
+
+        ptv = ptu->esq;
+        ptu->esq = ptv->dir;
+        ptv->dir = ptu;
+        (*pt)->dir = ptv->esq;
+        ptv->esq = (*pt);
+
+        if (ptv->bal == 1)
+            (*pt)->bal = -1;
+        else
+            (*pt)->bal = 0;
+
+
+        if (ptv->bal == -1)
+            ptu->bal = 1;
+        else
+            ptu->bal = 0;
+
+        (*pt) = ptv;
+        ptv->bal = 0;
+    }
+}
+
+void sucessor(AVL **pt, AVL **suc, char *h){
+
+    if ((*suc)->esq == NULL)
+    {
+        (*pt)->chave = (*suc)->chave;
+        *pt = *suc;
+        *suc = (*suc)->dir;
+        *h = 't';
+    }
+    else {
+        sucessor(pt, &(*suc)->esq, h);
+
+        if (*h == 't')
+        {
+            switch((*suc)->bal)
+            {
+                case -1:
+                    (*suc)->bal = 0;
+                    break;
+
+                case 0:
+                    (*suc)->bal = 1;
+                    *h = 'f';
+                    break;
+
+                case 1:
+                    caso2remocao(suc, h);
+                    break;
             }
         }
     }
 }
 
+void removeNode(AVL **pt, int32_t x, char *h){
+    AVL *suc = NULL;
+
+    if((*pt) == NULL)
+    {
+        printf("Chave nao existe!!!!!\n");
+    }
+    else
+    {
+        if(x == (*pt)->chave)
+        {
+            suc = *pt;
+            if((*pt)->esq != NULL && (*pt)->dir != NULL) {
+                sucessor(&suc, &suc->dir, h);
+
+                if (*h == 't') {
+                    switch ((*pt)->bal) {
+                        case 1:
+                            (*pt)->bal = 0;
+                            break;
+
+                        case 0:
+                            (*pt)->bal = -1;
+                            *h = 'f';
+                            break;
+
+                        case -1:
+                            caso1remocao(pt, h);
+                            break;
+                    }
+                }
+            }
+            else {
+                if(suc->esq == NULL)
+                {
+                    *pt = suc->dir;
+                    *h = 't';
+                }
+                else {
+                    *pt = suc->esq;
+                    *h = 't';
+                }
+            }
+            free(suc);
+        }
+        else {
+            //Se valor estiver a esquerda
+            if (x < (*pt)->chave) {
+                removeNode(&((*pt)->esq), x, h);
+                if (*h == 't') {
+                    switch ((*pt)->bal) {
+                        case 1:
+                            caso2remocao(pt, h);
+                            break;
+
+                        case 0:
+                            (*pt)->bal = 1;
+                            *h = 'f';
+                            break;
+
+                        case -1:
+                            (*pt)->bal = 0;
+                            break;
+                    }
+                }
+            }
+                //Se valor estiver a direita
+            else {
+                removeNode(&((*pt)->dir), x, h);
+                if (*h == 't') {
+                    switch ((*pt)->bal) {
+                        case 1:
+                            (*pt)->bal = 0;
+                            break;
+
+                        case 0:
+                            (*pt)->bal = -1;
+                            *h = 'f';
+                            break;
+
+                        case -1:
+                            caso1remocao(pt, h);
+                            break;
+                    }
+                }
+            }
+        }
+    }
+}

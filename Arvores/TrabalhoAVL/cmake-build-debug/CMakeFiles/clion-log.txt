@@ -1,4 +1,0 @@
-/home/fernando/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/192.6262.62/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Arvores/TrabalhoAVL
--- Configuring done
--- Generating done
--- Build files have been written to: /home/fernando/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Arvores/TrabalhoAVL/cmake-build-debug
