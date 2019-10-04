@@ -8,7 +8,7 @@ enum boolean {
     true = 1, false = 0
 };
 
-int menu(void) {
+unsigned short menu(void) {
 
     unsigned short option;
 
@@ -72,10 +72,9 @@ int main(void)
             exit(0);
 
         default:
-            break;
+            exit(0);
 
         }
     }
 
-    return 0;
 }
