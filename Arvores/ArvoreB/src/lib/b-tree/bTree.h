@@ -8,14 +8,18 @@ Fernando Lima - 19/09/2019
 #define _TREE_B_H
 
 struct page {
-     unsigned short m;
-     int *keys;
-     struct page *p;
+     unsigned short m; // page length
+     int *keys;        // page keys
+     struct page **p;   // page pointes
  };
 
+
 void delete(void);
-void search(void);
+struct page* search(struct page *root, int value, int *pos);
+
 void insert(void);
-void deallocate(void);
+static void deallocate(void);
+struct page* NewBTreeNode(int tamanho_maximo);
+
 
 #endif

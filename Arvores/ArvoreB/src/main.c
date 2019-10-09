@@ -8,6 +8,7 @@ enum boolean {
     true = 1, false = 0
 };
 
+
 unsigned short menu(void) {
 
     unsigned short option;
@@ -43,11 +44,39 @@ void showMessage(int id) {
     }
 }
 
+
+
+
 int main(void) 
 {
 
+    struct page *root = NULL;
+
+    root = NewBTreeNode(7, 4);
+    root->keys[1] = 16;
+    root->m++;
+
+    root->p[0] = NewBTreeNode(1, 4);
+    root->p[0]->keys[1] = 2;
+    root->p[0]->keys[2] = 5;
+    root->p[0]->keys[3] = 6;
+    root->p[0]->m++;
+    root->p[0]->m++;
+    root->p[0]->m++;
+
+    root->p[1] = NewBTreeNode(9, 4);
+    root->p[1]->keys[1] = 12;
+    root->p[1]->m++;
+
+
+    root->p[2] = NewBTreeNode(18, 4);
+    root->p[2]->keys[1] = 21;
+    root->p[2]->m++;
+
 
     unsigned short option;
+
+
 
     while (true) {
 
@@ -64,7 +93,7 @@ int main(void)
             break;
 
         case 3: 
-            search();
+            search(root);
             break;
 
         case 4:
