@@ -1,78 +1,6 @@
 #include "bTree.h"
 
-
-void delete(void) {
-    return;
-}
-
-struct page* search(struct page *root, int value, int *pos) {
-
-    if(root == NULL)
-        return NULL;
-
-    unsigned short m = root->m, count  = 0;
-
-    while (count < m) {
-
-
-        if(value == root->keys[count]) {
-            printf("VALOR ENCONTRNADO");
-            *pos= count;
-            return root;
-        }
-
-        if(value < root->keys[count]) {
-
-            root = root->p[count]; // troca pagina, chaves menores
-            if(root == NULL)
-                return NULL;
-
-            count = 0;
-            m = root->m;
-
-        }
-
-        if(value > root->keys[count] && count + 1 < m) {
-            count++;
-        } else {
-            if(count + 1 < m) {
-                root = root->p[count + 1];// troca pagina, chaves maiores
-                count = 0;
-                m = root->m;
-            } else return NULL;
-        }
-
-    }
-
-
-    return NULL;
-}
-
-//void insert(struct page **root, int k, int tamanho_maximo) {
-//
-//    search();
-//
-//    if(*root == NULL) {
-//        root = NewBTreeNode();
-//        root->keys[0] = k;
-//        root->m = 1;
-//    }
-//
-//    else {
-//
-//        if(root->m == 2 * tamanho_maximo - 1) {
-//            // tem coisa pra fazer
-//
-//
-//
-//        } else
-//            insertNonFull(*root, k);
-//    }
-//
-//}
-
-
-struct page* NewBTreeNode(int value, int t) {
+struct page* B_THREE_newNode(int value, unsigned short t) {
 
     struct page *newNode  = (struct page*) malloc(sizeof(struct page));
 
@@ -91,6 +19,21 @@ struct page* NewBTreeNode(int value, int t) {
 }
 
 
-static void deallocate(void) {
-    return;
+struct page* B_THREE_search(struct page *pt, const int value, unsigned short *position) {
+
+    unsigned short i = 0;
+
+    while (i < pt->m && value > pt->keys[i])
+        i++;
+
+    if(i <= pt->m && value == pt->keys[i]) { // find key
+        *position = i;
+        return pt;
+    }
+
+    else if(pt->isLeaf) // if page is leaf return null
+        return NULL;
+
+    return B_THREE_search(pt->p[i], value, position);
 }
+

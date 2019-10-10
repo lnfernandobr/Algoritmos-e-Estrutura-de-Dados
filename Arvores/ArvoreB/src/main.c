@@ -16,7 +16,7 @@ unsigned short menu(void) {
     printf("########## MENU ##########\n");
     printf("1 - Inserir\n");
     printf("2 - Remover\n");
-    printf("3 - Atualizar\n");
+    printf("3 - Buscar\n");
     printf("4 - Sair\n");
     printf("##########################\n");
     
@@ -28,19 +28,24 @@ unsigned short menu(void) {
 
 
 void showMessage(int id) {
+
     switch (id) {
 
-    case 1:
-        printf("Número de argumentos invalidos\n");
-        exit(-1);
-        break;
+        case 1:
+            puts("Número de argumentos invalidos\n");
+            exit(-1);
+            break;
 
-    case 2:
-        printf("Bye\n");
-        break;
-    
-    default:
-        break;
+        case 2:
+            puts("Bye\n");
+            break;
+
+        case 3:
+            puts("O valor procurado não se encontra na arvore.\n");
+            break;
+
+        default:
+            break;
     }
 }
 
@@ -50,31 +55,37 @@ void showMessage(int id) {
 int main(void) 
 {
 
+
+
     struct page *root = NULL;
 
-    root = NewBTreeNode(7, 4);
+    root = B_THREE_newNode(7, 4);
     root->keys[1] = 16;
+    root->isLeaf = 0;
     root->m++;
 
-    root->p[0] = NewBTreeNode(1, 4);
+    root->p[0] = B_THREE_newNode(1, 4);
     root->p[0]->keys[1] = 2;
     root->p[0]->keys[2] = 5;
     root->p[0]->keys[3] = 6;
     root->p[0]->m++;
     root->p[0]->m++;
     root->p[0]->m++;
+    root->p[0]->isLeaf = 1;
 
-    root->p[1] = NewBTreeNode(9, 4);
+    root->p[1] = B_THREE_newNode(9, 4);
     root->p[1]->keys[1] = 12;
     root->p[1]->m++;
+    root->p[1]->isLeaf = 1;
 
-
-    root->p[2] = NewBTreeNode(18, 4);
+    root->p[2] = B_THREE_newNode(18, 4);
     root->p[2]->keys[1] = 21;
     root->p[2]->m++;
+    root->p[2]->isLeaf = 1;
 
-
-    unsigned short option;
+    unsigned short option, position;
+    int key;
+    struct page *pt;
 
 
 
@@ -85,15 +96,23 @@ int main(void)
         switch (option) {
 
         case 1:
-            insert();
             break;
         
         case 2:
-            delete();
             break;
 
-        case 3: 
-            search(root);
+        case 3:
+
+            system("clear || cls");
+            puts("Digite o valor que deseja procurar: \n");
+            printf(">> "), scanf("%d", &key);
+
+            pt = B_THREE_search(root, key, &position);
+
+            if(!pt) {
+                showMessage(3);
+            } else printf("\nO valor %d foi encontrado na pagina no posição %d\n\n\n", key, position);
+
             break;
 
         case 4:
