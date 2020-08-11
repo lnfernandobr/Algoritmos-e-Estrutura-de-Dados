@@ -421,12 +421,8 @@ Os dados foram obtidos no laboratório de computação 4, da UEMS, foram coletad
 
 **10 ELEMENTOS**
 
-<<<<<<< HEAD
- 
-![Comparação entre algoritmos de ordenação 10](https://github.com/fernando/lnfernandobr/Documentos/DevFaculdade/Algoritmos-e-Estrutura-de-Dados/Algoritmos de Ordenaçãoraw/master/images/Comparação entre algoritmos de ordenação 10.png) 
-=======
+
 ![Comparação entre algoritmos de ordenação 10](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/Compara%C3%A7%C3%A3o%20entre%20algoritmos%20de%20ordena%C3%A7%C3%A3o%2010.png)
->>>>>>> ebe97e2b15a1fc3aeb88343a67931b381e83539d
 
 
 ![info-a-10](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/info-a-10.png)  ![info-c-10](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/info-c-10.png)![info-d-10](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/info-d-10.png)
