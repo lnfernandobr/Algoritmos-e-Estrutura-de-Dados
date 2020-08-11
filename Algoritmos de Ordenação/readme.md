@@ -23,14 +23,10 @@ Sabemos que um bom algoritmo de ordenação tem uma complexidade entre `n` e `n*
 A ideia é percorrer o vetor diversas vezes, e a cada passagem fazer flutuar para o topo o maior elemento da sequência. Essa movimentação lembra a forma como as bolhas em um tanque de água procuram seu próprio nível, e disso vem o nome do algoritmo.
 
 
-
-Um gif com o funciomaneto do algoritmo:
-
-<<<<<<< HEAD
-![bubleSort](/images/bubleSort.gif)  
-=======
+Um gif com o funciomaneto do algoritmo: 
+ 
 ![bubleSort](https://github.com/lnfernandobr/Algoritmos-e-Estrutura-de-Dados/blob/master/Algoritmos%20de%20Ordena%C3%A7%C3%A3o/images/bubleSort.gif)  
->>>>>>> ebe97e2b15a1fc3aeb88343a67931b381e83539d
+
 
  
 
